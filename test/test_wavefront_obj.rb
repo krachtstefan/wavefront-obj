@@ -5,6 +5,18 @@ describe WavefrontObj do
   before do
     @wavefront_obj = WavefrontObj.new
   end
+  
+  it "has to have a points Hash" do
+    @wavefront_obj.points.must_be_kind_of Hash
+  end
+
+  it "has to have a faces Hash" do
+    @wavefront_obj.faces.must_be_kind_of Hash
+  end  
+
+  it "has to have a point index at 0" do
+    @wavefront_obj.point_index.must_equal 0
+  end  
         
   it "has to provide a name setter and getter" do
     @wavefront_obj.name = "Test"
