@@ -72,7 +72,18 @@ describe WavefrontObj do
     it "has to have a face with face key" do
       @wavefront_obj.faces.values.first["face"].must_be_kind_of Array
     end
+    
+    describe "when adding the same face again" do
+      before do
+        @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
+      end
+            
+      it "still has to have 1 face" do
+        @wavefront_obj.faces.length.must_equal 1
+      end
+    end
 
+    
   end
 
 end
