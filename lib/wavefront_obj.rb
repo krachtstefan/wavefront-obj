@@ -43,6 +43,21 @@ class WavefrontObj
 		end
 	end
   
+	def get_raw_data
+		buffer = []
+		buffer.push(get_name_syntax(@name))
+
+		@points.each do |key, pnt|
+			buffer.push(get_point_syntax(pnt["point"]))
+		end
+
+		@faces.each do |key, face|
+			buffer.push(get_face_syntax(face["face"]))
+		end
+
+		return buffer.join("\n")
+  end
+  
   private
   
   def get_name_syntax(name)
