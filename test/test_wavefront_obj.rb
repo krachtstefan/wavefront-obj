@@ -24,6 +24,7 @@ describe WavefrontObj do
   end
   
   describe "when adding a point" do
+    
     before do
       @wavefront_obj.add_point [1, 2, 3]
     end
@@ -45,6 +46,7 @@ describe WavefrontObj do
     end
           
     describe "when adding the same point again" do
+      
       before do
         @wavefront_obj.add_point [1, 2, 3]
       end
@@ -56,11 +58,13 @@ describe WavefrontObj do
       it "still has to have 1 point" do
         @wavefront_obj.points.length.must_equal 1
       end
+      
     end
-    
+
   end
   
   describe "when adding a triangle face" do
+    
     before do
       @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
     end
@@ -81,8 +85,8 @@ describe WavefrontObj do
       it "still has to have 1 face" do
         @wavefront_obj.faces.length.must_equal 1
       end
+      
     end
-
     
   end
 
