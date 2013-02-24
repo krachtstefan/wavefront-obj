@@ -89,5 +89,14 @@ describe WavefrontObj do
     end
     
   end
+  
+  describe "requesting the raw data" do
+        
+    it "should return a string" do
+      @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
+      @wavefront_obj.get_raw_data.must_be_kind_of String
+    end
+        
+  end
 
 end
