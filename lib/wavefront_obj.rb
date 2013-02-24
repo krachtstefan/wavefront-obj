@@ -15,4 +15,11 @@ class WavefrontObj
 		@point_index = 0
 		@faces = Hash.new
 	end
+  private
+
+  def create_point_identifier(pnt)
+  	pnt.join("|")
+  end
+
+
 end
