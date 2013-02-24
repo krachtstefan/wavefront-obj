@@ -35,7 +35,15 @@ describe WavefrontObj do
     it "has to incremebt the point index" do
       @wavefront_obj.point_index.must_equal 1
     end
-      
+    
+    it "has to have a point with index key" do
+      @wavefront_obj.points.values.first["index"].must_be_kind_of Fixnum
+    end
+
+    it "has to have a point with point key" do
+      @wavefront_obj.points.values.first["point"].must_be_kind_of Array
+    end
+          
     describe "when adding the same point again" do
       before do
         @wavefront_obj.add_point [1, 2, 3]
@@ -49,10 +57,7 @@ describe WavefrontObj do
         @wavefront_obj.points.length.must_equal 1
       end
     end
-      
-    
-    
-    # check keys
+  
   end
 
 end
