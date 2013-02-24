@@ -44,6 +44,18 @@ class WavefrontObj
 	end
   
   private
+  
+  def get_name_syntax(name)
+  	"o #{name}"
+  end
+
+  def get_point_syntax(point)
+  	"v #{point.join(" ")}"
+  end
+
+  def get_face_syntax(face)
+  	"f #{face.join(" ")}"
+  end
 
   def create_point_identifier(pnt)
   	pnt.join("|")
