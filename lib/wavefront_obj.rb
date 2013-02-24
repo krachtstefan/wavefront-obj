@@ -31,6 +31,18 @@ class WavefrontObj
 		end
 	end
   
+	def add_face(pnt_arr)
+		face_points = []
+		pnt_arr.each do |pnt|
+			face_points.push add_point(pnt)
+		end
+		indentifier = create_face_identifier(face_points)
+		if @faces[indentifier].nil?
+			@faces[indentifier] = Hash.new
+			@faces[indentifier]["face"] = face_points
+		end
+	end
+  
   private
 
   def create_point_identifier(pnt)
