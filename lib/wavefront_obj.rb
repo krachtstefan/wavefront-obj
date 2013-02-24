@@ -73,11 +73,11 @@ class WavefrontObj
   end
 
   def create_point_identifier(pnt)
-  	pnt.join("|")
+    Digest::MD5.hexdigest(pnt.join("|"))
   end
   
   def create_face_identifier(pnts)
-  	pnts.join("|")
+    Digest::MD5.hexdigest(pnts.join("|"))
   end
 
 end
