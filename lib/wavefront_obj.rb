@@ -15,6 +15,22 @@ class WavefrontObj
 		@point_index = 0
 		@faces = Hash.new
 	end
+  
+	def add_point(pnt)
+		if pnt.class == Array && pnt.length == 3
+			indentifier = create_point_identifier(pnt)
+			if @points[indentifier].nil?
+				@points[indentifier] = Hash.new 
+				@point_index = @point_index+1
+				@points[indentifier]["index"] = @point_index
+			end
+			@points[indentifier]["point"] = pnt
+			return @points[indentifier]["index"]
+    else
+      false
+		end
+	end
+  
   private
 
   def create_point_identifier(pnt)
