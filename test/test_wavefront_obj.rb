@@ -49,11 +49,11 @@ describe WavefrontObj do
         @wavefront_obj.add_point [1, 2, 3]
       end
 
-      it "still has to be a point index 1" do
+      it "still has to have point index at 1" do
         @wavefront_obj.point_index.must_equal 1
       end
       
-      it "still has to have one point" do
+      it "still has to have 1 point" do
         @wavefront_obj.points.length.must_equal 1
       end
     end
