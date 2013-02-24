@@ -36,6 +36,9 @@ class WavefrontObj
   def create_point_identifier(pnt)
   	pnt.join("|")
   end
-
+  
+  def create_face_identifier(pnts)
+  	pnts.join("|")
+  end
 
 end
