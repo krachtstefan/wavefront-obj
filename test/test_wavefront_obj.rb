@@ -57,7 +57,22 @@ describe WavefrontObj do
         @wavefront_obj.points.length.must_equal 1
       end
     end
+    
+  end
   
+  describe "when adding a triangle face" do
+    before do
+      @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
+    end
+    
+    it "has to be in the faces array" do
+      @wavefront_obj.faces.length.must_equal 1
+    end
+    
+    it "has to have a face with face key" do
+      @wavefront_obj.faces.values.first["face"].must_be_kind_of Array
+    end
+
   end
 
 end
