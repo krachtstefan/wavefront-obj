@@ -78,6 +78,7 @@ describe WavefrontObj do
     end
     
     describe "when adding the same face again" do
+
       before do
         @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
       end
