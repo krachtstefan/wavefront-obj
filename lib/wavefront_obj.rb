@@ -42,7 +42,7 @@ class WavefrontObj
 		end
 	end
   
-	def export_obj_file(path)
+	def save(path)
 		raw_data = get_raw_data
 		path = "#{path}.obj" unless path.split(".").last == "obj"
 		File.open(path, 'w') {|f| f.write(get_raw_data) }
