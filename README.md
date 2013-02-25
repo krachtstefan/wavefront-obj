@@ -7,4 +7,47 @@ This library provides a handy interface to create wavefront .obj files. You can 
 
 #### Installation
 
-	gem install wavefront-obj
+	gem install wavefront-obj	
+
+#### Usage
+
+require librarym, create an object an give it a name
+
+	require 'wavefront_obj'
+	cube = WavefrontObj.new
+	cube.name = "my awesome cube"
+
+add faces
+
+	cube.add_face [[1, -1, -1],[1, -1, 1],[-1, -1, 1],[-1, -1, -1]]
+	cube.add_face [[1, 1, -1],[-1, 1, -1],[-1, 1, 1],[1, 1, 1]]
+	cube.add_face [[1, -1, -1],[1, 1, -1],[1, 1, 1],[1, -1, 1]]
+	cube.add_face [[1, -1, 1],[1, 1, 1],[-1, 1, 1],[-1, -1, 1]]
+	cube.add_face [[-1, -1, 1],[-1, 1, 1],[-1, 1, -1],[-1, -1, -1]]
+	cube.add_face [[1, 1, -1],[1, -1, -1],[-1, -1, -1],[-1, 1, -1]]
+
+access the raw date
+
+	puts cube.get_raw_data
+
+which will look like this
+
+	o my awesome cube
+	v 1 -1 -1
+	v 1 -1 1
+	v -1 -1 1
+	v -1 -1 -1
+	v 1 1 -1
+	v -1 1 -1
+	v -1 1 1
+	v 1 1 1
+	f 1 2 3 4
+	f 5 6 7 8
+	f 1 5 8 2
+	f 2 8 7 3
+	f 3 7 6 4
+	f 8 1 4 6
+
+save it as a file (You can open .obj files with most 3d programms like blender or some newer Photoshop versions as well)
+
+	cube.save("my_awesome_cube.obj")
