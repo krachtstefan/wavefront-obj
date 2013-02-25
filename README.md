@@ -11,7 +11,7 @@ This library provides a handy interface to create wavefront .obj files. You can 
 
 #### Usage
 
-require librarym, create an object an give it a name
+require library, create an object an give it a name
 
 	require 'wavefront_obj'
 	cube = WavefrontObj.new
@@ -48,6 +48,6 @@ which will look like this
 	f 3 7 6 4
 	f 8 1 4 6
 
-save it as a file (You can open .obj files with most 3d programms like blender or some newer Photoshop versions as well)
+save it as a file (you can open .obj files with most 3d programs like blender or some newer Photoshop versions as well)
 
 	cube.save("my_awesome_cube.obj")
