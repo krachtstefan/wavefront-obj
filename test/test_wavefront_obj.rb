@@ -33,7 +33,7 @@ describe WavefrontObj do
       @wavefront_obj.points.length.must_equal 1
     end
     
-    it "has to incremebt the point index" do
+    it "has to increment the point index" do
       @wavefront_obj.point_index.must_equal 1
     end
     

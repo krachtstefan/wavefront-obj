@@ -11,7 +11,7 @@ This library provides a handy interface to create wavefront .obj files. You can 
 
 #### Usage
 
-require library, create an object an give it a name
+require library, create an object and give it a name
 
 	require 'wavefront_obj'
 	cube = WavefrontObj.new
@@ -26,7 +26,7 @@ add faces
 	cube.add_face [[-1, -1, 1],[-1, 1, 1],[-1, 1, -1],[-1, -1, -1]]
 	cube.add_face [[1, 1, -1],[1, -1, -1],[-1, -1, -1],[-1, 1, -1]]
 
-access the raw date
+access the raw data
 
 	puts cube.get_raw_data
 
