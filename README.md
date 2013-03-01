@@ -46,7 +46,7 @@ which will look like this
 	f 1 5 8 2
 	f 2 8 7 3
 	f 3 7 6 4
-	f 8 1 4 6
+	f 5 1 4 6
 
 save it as a file (you can open .obj files with most 3d programs like blender or some newer Photoshop versions as well)
 
