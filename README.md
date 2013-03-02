@@ -68,4 +68,8 @@ or save it as a file. You can open .obj files with most 3d programs like blender
 
 **v1.0.2** 03/02/2013
 
-- ...
+- make _add\_face_ method return _true_ instead of _void_
+- added dependency injection to mock ruby file class
+- added test for save method 
+- added yard documentation
+- updated _README.md_ - Fixed some typos, adjust structure, added version history
