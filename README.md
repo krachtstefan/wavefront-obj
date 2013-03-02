@@ -55,3 +55,17 @@ which will look like this
 or save it as a file. You can open .obj files with most 3d programs like blender or some newer Photoshop versions as well. Most online 3d 
 
 	cube.save "my_awesome_cube.obj"
+
+
+## Version History
+**v1.0.0** 02/25/2013
+
+- initial release (yanked)
+
+**v1.0.1** 02/25/2013
+
+- renamed _export\_obj\_path_ method to _save_
+
+**v1.0.2** 03/02/2013
+
+- ...
