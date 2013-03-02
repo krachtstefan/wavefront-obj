@@ -8,4 +8,5 @@ Gem::Specification.new do |s|
   s.email       = "stefankracht@gmail.com"
   s.files       = ["lib/wavefront_obj.rb"]
   s.homepage    = "https://github.com/krachtstefan/wavefront-obj"
+  s.extra_rdoc_files = ['README.md']
 end
