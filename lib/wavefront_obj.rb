@@ -7,6 +7,9 @@ class WavefrontObj
   attr_reader :point_index
   attr_accessor :name, :points, :faces
   
+  # dependency injectors
+  attr_writer :file
+  
   DEFAULT_NAME = "Wavefront Obj"
   
   # inits attributes
@@ -78,6 +81,12 @@ class WavefrontObj
   end
   
   private
+  
+  # injectable dependencies for file
+  # @return [void]
+  def file
+    @file || File
+  end
   
   # returns the syntax of object definition
   # @param name [String] object name
