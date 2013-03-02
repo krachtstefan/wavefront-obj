@@ -1,17 +1,19 @@
 wavefront-obj
 =============
 
+#### Description
+
 Ruby library to create wavefront .obj files.
 
 This library provides a handy interface to create [wavefront .obj files](http://en.wikipedia.org/wiki/Wavefront_.obj_file). You can add vertex and faces to define a 3d object. It handles the syntax of the .obj file format and takes care of vertex definition (no vertex is defined twice which reduces filesize). You can access the result in raw data or write it into a file.
 
 Obj-Files can be used to feed a 3d printer.
 
-#### Installation
+#### Usage
+
+install
 
 	gem install wavefront-obj	
-
-#### Usage
 
 require library, create an object and give it a name
 
@@ -50,6 +52,6 @@ which will look like this
 	f 3 7 6 4
 	f 5 1 4 6
 
-save it as a file (you can open .obj files with most 3d programs like blender or some newer Photoshop versions as well)
+or save it as a file. You can open .obj files with most 3d programs like blender or some newer Photoshop versions as well. Most online 3d 
 
-	cube.save("my_awesome_cube.obj")
+	cube.save "my_awesome_cube.obj"
