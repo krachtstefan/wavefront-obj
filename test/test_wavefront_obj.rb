@@ -33,7 +33,7 @@ describe WavefrontObj do
       @wavefront_obj.points.length.must_equal 1
     end
     
-    it "has to incremebt the point index" do
+    it "has to increment the point index" do
       @wavefront_obj.point_index.must_equal 1
     end
     
@@ -96,6 +96,18 @@ describe WavefrontObj do
     it "should return a string" do
       @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
       @wavefront_obj.get_raw_data.must_be_kind_of String
+    end
+        
+  end
+
+  describe "saving to file" do
+
+    it "should return the filepath" do
+      @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
+      file_mockup = MiniTest::Mock.new
+      file_mockup.expect :open, true, ["file.obj", 'w']
+      @wavefront_obj.file = file_mockup
+      @wavefront_obj.save("file.obj").must_equal "file.obj"
     end
         
   end
