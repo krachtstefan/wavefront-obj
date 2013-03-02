@@ -52,9 +52,11 @@ which will look like this
 	f 3 7 6 4
 	f 5 1 4 6
 
-or save it as a file. You can open .obj files with most 3d programs like blender or some newer Photoshop versions as well.
+or save it as a file
 
 	cube.save "my_awesome_cube.obj"
+
+You can open .obj files with most 3d programs like blender or some newer Photoshop versions as well.
 
 
 ## Version History
