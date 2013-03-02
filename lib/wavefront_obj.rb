@@ -51,18 +51,7 @@ class WavefrontObj
 		end
     return true
 	end
-  
-  # stores the obj data as a file
-  # @param path [String] path to store the file, ".obj" will be added if missing
-  # @return [String] the path of the created file
-	def save(path)
-    # TODO add error handling
-		raw_data = get_raw_data
-		path = "#{path}.obj" unless path.split(".").last == "obj"
-		File.open(path, 'w') {|f| f.write(get_raw_data) }
-		path
-  end
-  
+    
   # returns the raw data of the obj file
   # @return [String] raw data
 	def get_raw_data
@@ -78,6 +67,17 @@ class WavefrontObj
 		end
 
 		return buffer.join("\n")
+  end
+
+  # stores the obj data as a file
+  # @param path [String] path to store the file, ".obj" will be added if missing
+  # @return [String] the path of the created file
+  def save(path)
+    # TODO add error handling
+    raw_data = get_raw_data
+    path = "#{path}.obj" unless path.split(".").last == "obj"
+    file.open(path, 'w') {|f| f.write(get_raw_data) }
+    path
   end
   
   private
