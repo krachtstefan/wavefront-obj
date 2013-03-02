@@ -19,20 +19,17 @@ class WavefrontObj
 
   # adds a point to the 3d object 
   # @param pnt [Array] array of 3 coordinates
-  # @return [String, false] the point index or false
+  # @return [String, false] the point index
 	def add_point(pnt)
-		if pnt.class == Array && pnt.length == 3
-			indentifier = create_point_identifier(pnt)
-			if @points[indentifier].nil?
-				@points[indentifier] = Hash.new 
-				@point_index = @point_index+1
-				@points[indentifier]["index"] = @point_index
-			end
-			@points[indentifier]["point"] = pnt
-			return @points[indentifier]["index"]
-    else
-      false
+    # TODO add error handling
+		indentifier = create_point_identifier(pnt)
+		if @points[indentifier].nil?
+			@points[indentifier] = Hash.new 
+			@point_index = @point_index+1
+			@points[indentifier]["index"] = @point_index
 		end
+		@points[indentifier]["point"] = pnt
+		return @points[indentifier]["index"]
 	end
   
   # adds a face to the 3d object 
