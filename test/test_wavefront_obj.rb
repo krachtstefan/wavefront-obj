@@ -100,4 +100,16 @@ describe WavefrontObj do
         
   end
 
+  describe "saving to file" do
+
+    it "should return the filepath" do
+      @wavefront_obj.add_face [[0, 0, 0],[1, 0, 0],[1, 1, 0]]
+      file_mockup = MiniTest::Mock.new
+      file_mockup.expect :open, true, ["file.obj", 'w']
+      @wavefront_obj.file = file_mockup
+      @wavefront_obj.save("file.obj").must_equal "file.obj"
+    end
+        
+  end
+
 end
