@@ -37,7 +37,7 @@ class WavefrontObj
   
   # adds a face to the 3d object 
   # @param pnt_arr [Array] array of multiple point arrays
-  # @void
+  # @return [true]
 	def add_face(pnt_arr)
     # TODO add error handling
 		face_points = []
@@ -49,6 +49,7 @@ class WavefrontObj
 			@faces[indentifier] = Hash.new
 			@faces[indentifier]["face"] = face_points
 		end
+    return true
 	end
   
   # stores the obj data as a file
